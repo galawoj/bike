@@ -78,7 +78,7 @@ fetch(directoryPath)
 
   });
 
-fetch("/gallery/")
+fetch("./gallery/")
   .then(res => res.text())
 
   .then(res => {
