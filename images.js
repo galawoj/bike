@@ -93,7 +93,7 @@ fetch("/gallery/")
         return fileExtensions.includes('.' + extension);
       });
 
-    galeriaTab.forEach((e)=>{galleryImage(e)})
+    galeriaTab.forEach((e)=>{galleryImage(e); console.log(e})
 
 
   })
