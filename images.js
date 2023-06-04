@@ -1,6 +1,6 @@
 function image(obraz, styl) {
   let element = document.createElement("div");
-  element.style.backgroundImage = `url(./background/${obraz})`;
+  element.style.backgroundImage = `url(/background/${obraz})`;
   element.style.backgroundPosition = "0 30%"
   element.classList.add(`${styl}`)
   document.querySelector(".bg").appendChild(element);
@@ -12,13 +12,13 @@ function galleryImage(obraz) {
   document.querySelector(".gallery").appendChild(element)
 
   const IMG = document.createElement("img")
-  IMG.src = `./gallery/${obraz}`
+  IMG.src = `/gallery/${obraz}`
   IMG.alt = ""
   
 
   IMG.addEventListener("click", () => {
     document.querySelector(".modal").classList.add("visible")
-    document.querySelector(".inner>img").src = `./gallery/${obraz}`
+    document.querySelector(".inner>img").src = `/gallery/${obraz}`
   })
 
   element.appendChild(IMG)
@@ -26,7 +26,7 @@ function galleryImage(obraz) {
 
 
 
-const directoryPath = './background/';
+const directoryPath = '/background/';
 const fileExtensions = ['.jpg', '.jpeg'];
 
 fetch(directoryPath)
@@ -78,7 +78,7 @@ fetch(directoryPath)
 
   });
 
-fetch("./gallery/")
+fetch("/gallery/")
   .then(res => res.text())
 
   .then(res => {
@@ -93,7 +93,7 @@ fetch("./gallery/")
         return fileExtensions.includes('.' + extension);
       });
 
-    galeriaTab.forEach((e)=>{galleryImage(e); console.log(e})
+    galeriaTab.forEach((e)=>{galleryImage(e)})
 
 
   })
